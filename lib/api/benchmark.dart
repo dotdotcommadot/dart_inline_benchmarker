@@ -2,23 +2,48 @@ part of dotdotcommadot_benchmarker;
 
 class Benchmark
 {
+	//-----------------------------------
+	//
+	// Public Properties
+	//
+	//-----------------------------------
+
 	final String identifier;
+
 	final Stopwatch stopwatch;
-  int indentation = 0;
-  
+
+  final int indentation;
+
   final List<BenchmarkResult> results = [];
-	bool isRunning = false;
-  
+
+	bool get isRunning => _currentResult != null;
+
+	//-----------------------------------
+	//
+	// Private Properties
+	//
+	//-----------------------------------
+
   BenchmarkResult _currentResult;
+
+	//-----------------------------------
+	//
+	// Constructor
+	//
+	//-----------------------------------
 	
-  Benchmark(this.identifier, this.stopwatch, {this.indentation});
-	
+  Benchmark(this.identifier, this.stopwatch, {this.indentation: 0});
+
+	//-----------------------------------
+	//
+	// Public Methods
+	//
+	//-----------------------------------
+
 	void start()
 	{
 		if (isRunning)
 			return;
-		
-		isRunning = true;
 		
 		_currentResult = new BenchmarkResult();
 		_currentResult.startingTime = stopwatch.elapsedMicroseconds;
@@ -29,10 +54,9 @@ class Benchmark
 		if (!isRunning || _currentResult == null)
 			return;
 		
-		isRunning = false;
-		
 		_currentResult.stopTime = stopwatch.elapsedMicroseconds;
 		_currentResult.calculate();
+		
 		results.add(_currentResult);
 		_currentResult = null;
 	}
@@ -41,26 +65,32 @@ class Benchmark
 	{
 		if (results.length == 1)
 		{
-			print('${getIndentation()}${identifier}: Runtime: ${results.first.runtime.toString()} us');
+			print('${_getIndentation()}${identifier}: Runtime: ${results.first.runtime.toString()} us');
 		}
 		else
 		{
-			print('${getIndentation()}${identifier}:');
+			print('${_getIndentation()}${identifier}:');
 			for (var i = 0; i < results.length; i++)
   		{
   			BenchmarkResult result = results[i];
-  			print('${getIndentation()}› (${(i + 1).toString()}/${results.length}) Runtime: ${result.runtime.toString()} us');
+  			print('${_getIndentation()}› (${(i + 1).toString()}/${results.length}) Runtime: ${result.runtime.toString()} us');
   		}
 		}
 	}
-	
-	String getIndentation()
+
+	//-----------------------------------
+	//
+	// Private Methods
+	//
+	//-----------------------------------
+
+	String _getIndentation()
 	{
 		String indent = "";
 		
 		if (indentation != null && indentation != 0)
 		{
-			for(int i = 0; i < indentation; i++)
+			for (int i = 0; i < indentation; i++)
   		{
 				indent = '$indent   ';
   		}

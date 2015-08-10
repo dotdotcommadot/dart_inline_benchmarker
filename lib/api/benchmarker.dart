@@ -9,7 +9,9 @@ class Benchmarker
   //-----------------------------------
 	
 	static bool _disabled 															= false;
+	
 	static Stopwatch _stopwatch 												= new Stopwatch();
+	
 	static Map<String, List<Benchmark>> _benchmarks 		= new Map();
 	
   //-----------------------------------
@@ -24,8 +26,8 @@ class Benchmarker
 	}
 	
 	/***
-	 * Returns a new Benchmark, if Benchmarker.disabled is false.
-	 * Returns an empty Benchmark if Benchmarker.disabled is true.
+	 * Returns a new Benchmark if Benchmarker is disabled.
+	 * Returns an empty Benchmark if Benchmarker is not disabled.
 	 */
 	static Benchmark generate(String name, {int indentation, bool autoRun: true, String group: 'DEFAULT'})
 	{

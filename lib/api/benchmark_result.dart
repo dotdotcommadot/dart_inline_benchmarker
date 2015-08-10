@@ -2,6 +2,12 @@ part of dotdotcommadot_benchmarker;
 
 class BenchmarkResult
 {
+	//-----------------------------------
+	//
+	// Public Properties
+	//
+	//-----------------------------------
+
 	/***
 	 * Runtime in MicroSeconds.
 	 */
@@ -16,14 +22,31 @@ class BenchmarkResult
 	 * stopTime in MicroSeconds.
 	 */
 	int stopTime = 0;
-	
-	
+
+	//-----------------------------------
+	//
+	// Constructor
+	//
+	//-----------------------------------
+
 	BenchmarkResult();
+
+	//-----------------------------------
+	//
+	// Public Methods
+	//
+	//-----------------------------------
 	
 	void calculate()
 	{
 		runtime = _calculateRuntime();
 	}
-	
+
+	//-----------------------------------
+	//
+	// Private Methods
+	//
+	//-----------------------------------
+
 	int _calculateRuntime() => (stopTime - startingTime);
 }

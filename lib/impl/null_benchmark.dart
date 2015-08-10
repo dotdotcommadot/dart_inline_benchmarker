@@ -2,8 +2,20 @@ part of dotdotcommadot_benchmarker;
 
 class NullBenchmark extends Benchmark
 {
+	//-----------------------------------
+	//
+	// Constructor
+	//
+	//-----------------------------------
+
 	NullBenchmark() : super(null, null);
-	
+
+	//-----------------------------------
+	//
+	// Override Methods
+	//
+	//-----------------------------------
+
 	@override 
 	start()
 	{
