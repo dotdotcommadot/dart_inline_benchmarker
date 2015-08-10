@@ -138,6 +138,11 @@ Benchmarker.disable();
 Enable benchmarks to produce a report
 ```
 
+## Info
+	
+For more info about this project, contact:
+
+- [hans@dotdotcommadot.com](mailto:hans@dotdotcommadot.com)
 
 
 
