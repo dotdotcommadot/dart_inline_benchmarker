@@ -1,6 +1,6 @@
 ## About
 
-InlineBenchmarker is an easy to use benchmarking system.  
+InlineBenchmarker is an easy to use inline benchmarking system.  
 The goal of inline benchmarking is to help you find bottle-necks in your application, rather than to benchmark abstract units.  
 Therefor [Dart's benchmark harness library](https://github.com/dart-lang/benchmark_harness) would probably be better suited.  
 Inline benchmarks can be used in projects that are otherwise hard to benchmark (perhaps because they are too much of a spaghetti), or to monitor alghorithms on how they respond with production processes and data.
@@ -123,6 +123,21 @@ void calculateOtherStuffMethod()
 - when no ```group``` is specified, a 'DEFAULT' group will be created
 - ```indentation``` will indent the output with the number of tabs specified
 - ```Benchmarker.report(group: 'CALCULATION');``` will only report the benchmark specified by the ```group``` parameter
+
+## How To: Disabling Benchmarks
+When you are running in production mode, you probably don't want the benchmarks running constantly.
+A better option would be to give your application the ability to enable/disable benchmarks by passing a URL parameter (in the case of a web application).
+
+Disabling benchmarks is very easy:
+```Dart
+Benchmarker.disable();
+```
+
+##### Output:
+```
+Enable benchmarks to produce a report
+```
+
 
 
 
