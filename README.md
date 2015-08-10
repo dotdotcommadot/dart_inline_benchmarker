@@ -67,6 +67,7 @@ void calculateMethod()
 ##### Explanation:
 
 - ```(1/100)``` is which iteration was benchmarked
+- setting ```autoRun``` to false will prevent the benchmark from running instantly. The benchmark should be started with the ```start()``` method
 
 ### Using Group and Indentation Parameters
 
