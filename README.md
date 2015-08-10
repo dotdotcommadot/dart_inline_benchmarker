@@ -126,7 +126,7 @@ void calculateOtherStuffMethod()
 
 ## How To: Disabling Benchmarks
 When you are running in production mode, you probably don't want the benchmarks running constantly.
-A better option would be to give your application the ability to enable/disable benchmarks by passing a URL parameter (in the case of a web application).
+A better option would be to give your application the ability to enable/disable benchmarks (perhaps by passing a URL parameter, in the case of a web application).
 
 Disabling benchmarks is very easy:
 ```Dart
