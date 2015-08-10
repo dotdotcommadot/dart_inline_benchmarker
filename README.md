@@ -84,7 +84,7 @@ void calculateMethod()
         
         // Perform calculation logic
         
-        calculateOtherStuffMethod()
+        calculateOtherStuffMethod();
         
         calculateLoopBenchmark.stop();
     }
@@ -122,7 +122,7 @@ void calculateOtherStuffMethod()
 - ```group``` will group benchmarks together in the output console.  
 - when no ```group``` is specified, a 'DEFAULT' group will be created
 - ```indentation``` will indent the output with the number of tabs specified
-- ```Benchmarker.report(group: 'CALCULATION');``` will only report the benchmark specifiec by the ```group``` parameter
+- ```Benchmarker.report(group: 'CALCULATION');``` will only report the benchmark specified by the ```group``` parameter
 
 
 
