@@ -1,4 +1,4 @@
-part of dotdotcommadot_benchmarker;
+part of inline_benchmarker;
 
 class NullBenchmark extends Benchmark
 {

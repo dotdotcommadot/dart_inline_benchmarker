@@ -1,4 +1,4 @@
-import 'package:dotdotcommadot_benchmarker/dotdotcommadot_benchmarker.dart';
+import 'package:inline_benchmarker/inline_benchmarker.dart';
 
 void main() 
 {
