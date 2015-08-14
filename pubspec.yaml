@@ -1,5 +1,5 @@
 name: inline_benchmarker
-version: 0.0.1
+version: 0.1.1
 description: Inline Benchmarking for Google Dart
 author: Hans Van den Keybus <hans@dotdotcommadot.com>
 homepage: https://github.com/dotdotcommadot/dart_inline_benchmarker
