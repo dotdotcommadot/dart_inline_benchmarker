@@ -20,17 +20,21 @@ void loginMethod()
 	Benchmarker.report();
 }
 ```
+
+###### Explanation of Code:
+
+- ```loginBenchmark``` is the name of the benchmark
+- ```Benchmarker.report();``` will print out the results of the benchmark
+
 ##### Output:
 ```
 [DEFAULT] loginBenchmark: Runtime: 1000 us
 ```
 
-##### Explanation:
+###### Explanation of Output:
 
 - ```[DEFAULT]``` stands for the group the benchmark belongs to
-- ```loginBenchmark``` is the name of the benchmark
 - ```1000 us``` is how long the benchmark took to run
-- ```Benchmarker.report();``` will print out the results of the benchmark
 
 > µs is an abbreviation for microseconds.
 
@@ -54,6 +58,11 @@ void calculateMethod()
 }
 ```
 
+###### Explanation of Code:
+
+- Setting ```autoRun``` to false will prevent the benchmark from running instantly.
+- Benchmarks can be started manually using the ```start()``` method
+
 ##### Output:
 ```
 [DEFAULT] calculationBenchmark:
@@ -64,10 +73,9 @@ void calculateMethod()
 › (100/100) Runtime: 10 us
 
 ```
-##### Explanation:
+###### Explanation of Output:
 
 - ```(1/100)``` is which iteration was benchmarked
-- setting ```autoRun``` to false will prevent the benchmark from running instantly. The benchmark should be started with the ```start()``` method
 
 ### Using Group and Indentation Parameters
 
@@ -104,6 +112,13 @@ void calculateOtherStuffMethod()
 }
 ```
 
+###### Explanation of Code:
+
+- The ```group``` parameter will group benchmarks together in the output console.
+- When no ```group``` is specified, a 'DEFAULT' group will be created
+- The ```indentation``` parameter will indent the output with the number of tabs specified
+- ```Benchmarker.report(group: 'CALCULATION');``` will only report the benchmark specified by the ```group``` parameter
+
 ##### Output:
 ```
 [CALCULATION] Calculation Benchmark: Runtime: 10000 us
@@ -118,12 +133,6 @@ void calculateOtherStuffMethod()
     › (100/100) Runtime: 10 us
         [CALCULATION] Calculate Other Stuff Benchmark: Runtime: 10 us
 ```
-##### Explanation:
-
-- ```group``` will group benchmarks together in the output console.  
-- when no ```group``` is specified, a 'DEFAULT' group will be created
-- ```indentation``` will indent the output with the number of tabs specified
-- ```Benchmarker.report(group: 'CALCULATION');``` will only report the benchmark specified by the ```group``` parameter
 
 ## How To: Disabling Benchmarks
 When you are running in production mode, you probably don't want the benchmarks running constantly.
