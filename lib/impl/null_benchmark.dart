@@ -12,21 +12,12 @@ class NullBenchmark extends Benchmark
   // Public Methods
   //-----------------------------------
 
-  @override 
-  start()
-  {
-    // do nuttin
-  }
+  @override
+  void start() {}
 
-  @override 
-  stop()
-  {
-    // do nuttin
-  }
+  @override
+  void stop() {}
 
-  @override 
-  report()
-  {
-    // do nuttin
-  }
+  @override
+  void report() {}
 }

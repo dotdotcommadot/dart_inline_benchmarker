@@ -10,7 +10,7 @@ class Benchmarker
   
   static Stopwatch _stopwatch = new Stopwatch();
   
-  static Map<String, List<Benchmark>> _benchmarks = new Map();
+  static Map<String, List<Benchmark>> _benchmarks = new Map<String, List<Benchmark>>();
   
   //-----------------------------------
   // Public Static Methods
@@ -21,10 +21,8 @@ class Benchmarker
     _disabled = true;
   }
   
-  /***
-   * Returns a new Benchmark if Benchmarker is disabled.
-   * Returns an empty Benchmark if Benchmarker is not disabled.
-   */
+	/// Returns a new Benchmark if Benchmarker is disabled.
+	/// Returns an empty Benchmark if Benchmarker is not disabled.
   static Benchmark generate(String name, {int indentation, bool autoRun: true, String group: 'DEFAULT'})
   {
     if (_disabled)
@@ -34,7 +32,7 @@ class Benchmarker
       _stopwatch.start();
     
     if (_benchmarks[group] == null)
-      _benchmarks[group] = new List();
+      _benchmarks[group] = <Benchmark>[];
     
     Benchmark benchmark = new Benchmark('[$group] $name', _stopwatch, indentation: indentation);
     _benchmarks[group].add(benchmark);
@@ -45,10 +43,8 @@ class Benchmarker
     return benchmark;
   }
     
-  /***
-   * Generates a report for the given group.
-   * If no group is specified, the default group is selected
-   */
+	/// Generates a report for the given group.
+	/// If no group is specified, the default group is selected
   static void report({String group: 'DEFAULT'})
   {
     if (_disabled)
@@ -63,15 +59,15 @@ class Benchmarker
       return;
     }
     
-    List runningBenchmarks = _benchmarks[group].where((B) => B.isRunning == true).toList();
+    List<Benchmark> runningBenchmarks = _benchmarks[group].where((Benchmark benchmark) => benchmark.isRunning == true).toList();
     if (runningBenchmarks != null && runningBenchmarks.length > 0)
     {
       print("Could not generate a report, because following benchmarks are still running: ");
-      runningBenchmarks.forEach((B) => print('${B.identifier.toString()}'));
+      runningBenchmarks.forEach((Benchmark benchmark) => print('${benchmark.identifier.toString()}'));
       return;
     }
     
-    _benchmarks[group].forEach((B) => B.report());
+    _benchmarks[group].forEach((Benchmark benchmark) => benchmark.report());
     
     _benchmarks.remove(group);
     _stopwatch = new Stopwatch();

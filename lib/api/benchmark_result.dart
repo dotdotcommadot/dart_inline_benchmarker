@@ -6,19 +6,13 @@ class BenchmarkResult
   // Public Properties
   //-----------------------------------
 
-  /***
-   * Runtime in MicroSeconds.
-   */
+	/// Runtime in microseconds.
   int runtime = 0;
-  
-  /***
-   * startingTime in MicroSeconds.
-   */
+
+	/// startingTime in microseconds.
   int startingTime = 0;
-  
-  /***
-   * stopTime in MicroSeconds.
-   */
+
+	/// stopTime in microseconds.
   int stopTime = 0;
 
   //-----------------------------------

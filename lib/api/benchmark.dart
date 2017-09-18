@@ -12,7 +12,7 @@ class Benchmark
 
   final int indentation;
 
-  final List<BenchmarkResult> results = [];
+  final List<BenchmarkResult> results = <BenchmarkResult>[];
 
   bool get isRunning => _currentResult != null;
 
@@ -57,12 +57,12 @@ class Benchmark
   {
     if (results.length == 1)
     {
-      print('${_getIndentation()}${identifier}: Runtime: ${results.first.runtime.toString()} us');
+      print('${_getIndentation()}$identifier: Runtime: ${results.first.runtime.toString()} us');
     }
     else
     {
-      print('${_getIndentation()}${identifier}:');
-      for (var i = 0; i < results.length; i++)
+      print('${_getIndentation()}$identifier:');
+      for (int i = 0; i < results.length; i++)
       {
         BenchmarkResult result = results[i];
         print('${_getIndentation()}› (${(i + 1).toString()}/${results.length}) Runtime: ${result.runtime.toString()} us');
