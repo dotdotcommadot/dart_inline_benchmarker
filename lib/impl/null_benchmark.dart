@@ -2,35 +2,31 @@ part of inline_benchmarker;
 
 class NullBenchmark extends Benchmark
 {
-	//-----------------------------------
-	//
-	// Constructor
-	//
-	//-----------------------------------
+  //-----------------------------------
+  // Constructor
+  //-----------------------------------
 
-	NullBenchmark() : super(null, null);
+  NullBenchmark() : super(null, null);
 
-	//-----------------------------------
-	//
-	// Override Methods
-	//
-	//-----------------------------------
+  //-----------------------------------
+  // Public Methods
+  //-----------------------------------
 
-	@override 
-	start()
-	{
-		// do nuttin
-	}
+  @override 
+  start()
+  {
+    // do nuttin
+  }
 
-	@override 
-	stop()
-	{
-		// do nuttin
-	}
+  @override 
+  stop()
+  {
+    // do nuttin
+  }
 
-	@override 
-	report()
-	{
-		// do nuttin
-	}
+  @override 
+  report()
+  {
+    // do nuttin
+  }
 }

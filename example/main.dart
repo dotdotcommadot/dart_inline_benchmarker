@@ -8,7 +8,7 @@ void main()
 void runMyStuff()
 {
   Benchmark runMyStuffBenchmark = Benchmarker.generate("runMyStuff", group: "MAIN");
-  Benchmark forLoopBenchmark 		= Benchmarker.generate("forLoop", autoRun: false);
+  Benchmark forLoopBenchmark = Benchmarker.generate("forLoop", autoRun: false);
 	
   for (var i = 0; i < 100; i++)
   {
