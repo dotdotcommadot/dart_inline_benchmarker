@@ -1,18 +1,18 @@
 part of inline_benchmarker;
 
-class BenchmarkResult
-{
+class BenchmarkResult {
+
   //-----------------------------------
   // Public Properties
   //-----------------------------------
 
-	/// Runtime in microseconds.
+  /// Runtime in microseconds.
   int runtime = 0;
 
-	/// startingTime in microseconds.
+  /// startingTime in microseconds.
   int startingTime = 0;
 
-	/// stopTime in microseconds.
+  /// stopTime in microseconds.
   int stopTime = 0;
 
   //-----------------------------------
@@ -24,9 +24,9 @@ class BenchmarkResult
   //-----------------------------------
   // Public Methods
   //-----------------------------------
-  
-  void calculate()
-  {
+
+  void calculate() {
+
     runtime = _calculateRuntime();
   }
 

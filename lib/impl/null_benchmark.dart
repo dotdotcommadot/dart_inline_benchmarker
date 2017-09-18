@@ -1,7 +1,7 @@
 part of inline_benchmarker;
 
-class NullBenchmark extends Benchmark
-{
+class NullBenchmark extends Benchmark {
+
   //-----------------------------------
   // Constructor
   //-----------------------------------

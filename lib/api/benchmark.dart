@@ -1,7 +1,7 @@
 part of inline_benchmarker;
 
-class Benchmark
-{
+class Benchmark {
+
   //-----------------------------------
   // Public Properties
   //-----------------------------------
@@ -25,36 +25,39 @@ class Benchmark
   //-----------------------------------
   // Constructor
   //-----------------------------------
-  
-  Benchmark(this.identifier, this.stopwatch, {this.indentation: 0});
+
+  Benchmark(
+    this.identifier,
+    this.stopwatch,
+    {this.indentation: 0});
 
   //-----------------------------------
   // Public Methods
   //-----------------------------------
 
-  void start()
-  {
+  void start() {
+
     if (isRunning)
       return;
-    
+
     _currentResult = new BenchmarkResult();
     _currentResult.startingTime = stopwatch.elapsedMicroseconds;
   }
-  
-  void stop()
-  {
+
+  void stop() {
+
     if (!isRunning || _currentResult == null)
       return;
-    
+
     _currentResult.stopTime = stopwatch.elapsedMicroseconds;
     _currentResult.calculate();
-    
+
     results.add(_currentResult);
     _currentResult = null;
   }
-  
-  void report()
-  {
+
+  void report() {
+
     if (results.length == 1)
     {
       print('${_getIndentation()}$identifier: Runtime: ${results.first.runtime.toString()} us');
@@ -74,10 +77,10 @@ class Benchmark
   // Private Methods
   //-----------------------------------
 
-  String _getIndentation()
-  {
+  String _getIndentation() {
+
     String indent = "";
-    
+
     if (indentation != null && indentation != 0)
     {
       for (int i = 0; i < indentation; i++)
@@ -85,7 +88,7 @@ class Benchmark
         indent = '$indent   ';
       }
     }
-    
+
     return indent;
   }
 }
