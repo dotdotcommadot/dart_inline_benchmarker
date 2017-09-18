@@ -12,12 +12,12 @@ Inline benchmarks can be used in projects that are otherwise hard to benchmark (
 ```Dart
 void loginMethod()
 {
-	Benchmark loginBenchmark = Benchmarker.generate("loginBenchmark");
-	
-	// Perform login logic
-	
-	loginBenchmark.stop();
-	Benchmarker.report();
+  Benchmark loginBenchmark = Benchmarker.generate("loginBenchmark");
+  
+  // Perform login logic
+  
+  loginBenchmark.stop();
+  Benchmarker.report();
 }
 ```
 
@@ -43,18 +43,16 @@ void loginMethod()
 ```Dart
 void calculateMethod()
 {
-	Benchmark calculationBenchmark = Benchmarker.generate("calculationBenchmark", autoRun: false);
-	
-    for (int i = 0; i < 100 ; i++)
-    {
-        calculationBenchmark.start();
-        
-        // Perform calculation logic
-        
-        calculationBenchmark.stop();
-    }
-	
-	Benchmarker.report();
+  Benchmark calculationBenchmark = Benchmarker.generate("calculationBenchmark", autoRun: false);
+  
+  for (int i = 0; i < 100 ; i++)
+  {
+    calculationBenchmark.start();   
+    // Perform calculation logic
+    calculationBenchmark.stop();
+  }
+  
+  Benchmarker.report();
 }
 ```
 
@@ -84,31 +82,26 @@ For more complex applications, which combine nested methods and loops, it might 
 ```Dart
 void calculateMethod()
 {
-    Benchmark calculateMethodBenchmark  = Benchmarker.generate("Calculation Benchmark", group: 'CALCULATION');
-    Benchmark calculateLoopBenchmark    = Benchmarker.generate("Calculation Loop Benchmark", group: 'CALCULATION', indentation: 1, autoStart: false);
-	
-    for (int i = 0; i < 100 ; i++)
-    {
-        calculateLoopBenchmark.start();
-        
-        // Perform calculation logic
-        
-        calculateOtherStuffMethod();
-        
-        calculateLoopBenchmark.stop();
-    }
-	
-    calculateMethodBenchmark.stop();
-    Benchmarker.report(group: 'CALCULATION');
+  Benchmark calculateMethodBenchmark  = Benchmarker.generate("Calculation Benchmark", group: 'CALCULATION');
+  Benchmark calculateLoopBenchmark    = Benchmarker.generate("Calculation Loop Benchmark", group: 'CALCULATION', indentation: 1, autoStart: false);
+  
+  for (int i = 0; i < 100 ; i++)
+  {
+    calculateLoopBenchmark.start();
+    // Perform calculation logic
+    calculateOtherStuffMethod();
+    calculateLoopBenchmark.stop();
+  }
+  
+  calculateMethodBenchmark.stop();
+  Benchmarker.report(group: 'CALCULATION');
 }
 
 void calculateOtherStuffMethod()
 {
-    Benchmark calculateOtherStuffMethodBenchmark  = Benchmarker.generate("Calculate Other Stuff Benchmark", group: 'CALCULATION', indentation: 2);
-    
-    // Perform other calculation logic
-    
-    calculateOtherStuffMethodBenchmark.stop();
+  Benchmark calculateOtherStuffMethodBenchmark  = Benchmarker.generate("Calculate Other Stuff Benchmark", group: 'CALCULATION', indentation: 2);
+  // Perform other calculation logic
+  calculateOtherStuffMethodBenchmark.stop();
 }
 ```
 
@@ -122,16 +115,16 @@ void calculateOtherStuffMethod()
 ##### Output:
 ```
 [CALCULATION] Calculation Benchmark: Runtime: 10000 us
-    [CALCULATION] Calculation Loop Benchmark:
-    › (1/100) Runtime: 10 us
-        [CALCULATION] Calculate Other Stuff Benchmark: Runtime: 10 us
-    › (2/100) Runtime: 10 us
-        [CALCULATION] Calculate Other Stuff Benchmark: Runtime: 10 us
-    › (3/100) Runtime: 10 us
-        [CALCULATION] Calculate Other Stuff Benchmark: Runtime: 10 us
+  [CALCULATION] Calculation Loop Benchmark:
+  › (1/100) Runtime: 10 us
+    [CALCULATION] Calculate Other Stuff Benchmark: Runtime: 10 us
+  › (2/100) Runtime: 10 us
+    [CALCULATION] Calculate Other Stuff Benchmark: Runtime: 10 us
+  › (3/100) Runtime: 10 us
+    [CALCULATION] Calculate Other Stuff Benchmark: Runtime: 10 us
     ...
-    › (100/100) Runtime: 10 us
-        [CALCULATION] Calculate Other Stuff Benchmark: Runtime: 10 us
+  › (100/100) Runtime: 10 us
+    [CALCULATION] Calculate Other Stuff Benchmark: Runtime: 10 us
 ```
 
 ## How To: Disabling Benchmarks
@@ -149,7 +142,7 @@ Enable benchmarks to produce a report
 ```
 
 ## Info
-	
+  
 For more info about this project, contact:
 
 - [hans@dotdotcommadot.com](mailto:hans@dotdotcommadot.com)
