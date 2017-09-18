@@ -1,11 +1,11 @@
 name: inline_benchmarker
-version: 0.1.1
+version: 0.1.2
 description: Inline Benchmarking for Google Dart
 author: Hans Van den Keybus <hans@dotdotcommadot.com>
 homepage: https://github.com/dotdotcommadot/dart_inline_benchmarker
 environment:
   sdk: '>=1.0.0 <2.0.0'
 dependencies:
-  logging: '>=0.10.0 <0.11.0'
+  logging: ^0.11.2
 dev_dependencies:
   test: any
