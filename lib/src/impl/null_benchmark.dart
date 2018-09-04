@@ -1,7 +1,6 @@
-part of inline_benchmarker;
+import 'package:inline_benchmarker/inline_benchmarker.dart';
 
 class NullBenchmark extends Benchmark {
-
   //-----------------------------------
   // Constructor
   //-----------------------------------

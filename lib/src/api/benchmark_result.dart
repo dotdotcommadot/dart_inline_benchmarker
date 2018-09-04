@@ -1,7 +1,4 @@
-part of inline_benchmarker;
-
 class BenchmarkResult {
-
   //-----------------------------------
   // Public Properties
   //-----------------------------------
@@ -26,7 +23,6 @@ class BenchmarkResult {
   //-----------------------------------
 
   void calculate() {
-
     runtime = _calculateRuntime();
   }
 
@@ -34,5 +30,5 @@ class BenchmarkResult {
   // Private Methods
   //-----------------------------------
 
-  int _calculateRuntime() => (stopTime - startingTime);
+  int _calculateRuntime() => stopTime - startingTime;
 }
